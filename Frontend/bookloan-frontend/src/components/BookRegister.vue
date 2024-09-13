@@ -9,6 +9,7 @@
       <nav>
         <router-link to="/">Home</router-link> |
         <router-link to="/books-overview">Books Overview</router-link> |
+        <router-link to="/book-register">Register Book</router-link> |
         <router-link to="/book-loan">Loan Book</router-link> |
         <router-link to="/book-return">Return Book</router-link>
       </nav>

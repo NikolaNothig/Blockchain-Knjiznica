@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import BooksOverview from '../components/BooksOverview.vue';
 import BookRegister from '../components/BookRegister.vue';
+import BookLoan from '../components/BookLoan.vue';  // Import the BookLoan component
+import BookReturn from '../components/BookReturn.vue';  // Import the BookReturn component
 
 const routes = [
   {
@@ -15,9 +17,19 @@ const routes = [
     component: BooksOverview
   },
   {
-    path: '/book-register',  // Define the path for registering books
+    path: '/book-register',
     name: 'BookRegister',
-    component: BookRegister  // Assign the BookRegister component to the route
+    component: BookRegister
+  },
+  {
+    path: '/book-loan',  // Define the path for loaning books
+    name: 'BookLoan',
+    component: BookLoan  // Assign the BookLoan component to the route
+  },
+  {
+    path: '/book-return',  // Define the path for returning books
+    name: 'BookReturn',
+    component: BookReturn  // Assign the BookReturn component to the route
   },
   {
     path: '/about',

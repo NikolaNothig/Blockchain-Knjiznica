@@ -8,6 +8,7 @@
       </div>
       <nav>
         <router-link to="/">Home</router-link> |
+        <router-link to="/books-overview">Books Overview</router-link> |
         <router-link to="/book-register">Register Book</router-link> |
         <router-link to="/book-loan">Loan Book</router-link> |
         <router-link to="/book-return">Return Book</router-link>
@@ -17,7 +18,8 @@
         <ul>
           <li v-for="book in books" :key="book.id">
             ID: {{ book.id }}, Title: {{ book.title }}, Author: {{ book.author }},
-            Current Holder: {{ book.currentHolder || 'None' }}, Loaned: {{ book.isLoaned ? 'Yes' : 'No' }}
+            Current Holder: {{ book.currentHolder || 'None' }},
+            Loaned: {{ book.isLoaned ? 'Yes' : 'No' }}
           </li>
         </ul>
       </div>
@@ -30,7 +32,7 @@
   <script>
   import { ref, onMounted } from 'vue';
   import { ethers } from 'ethers';
-  import bookLoanContract from '@/ethereum/bookLoan.js';  // Updated path
+  import bookLoanContract from '@/ethereum/bookLoan.js';  // Ensure the path is correct
   
   export default {
     name: 'BooksOverview',
@@ -91,6 +93,44 @@
   
   nav a.router-link-exact-active {
     color: #42b983;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #eee;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #42b983;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #367c59;
+  }
+  
+  button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
   }
   </style>
   
