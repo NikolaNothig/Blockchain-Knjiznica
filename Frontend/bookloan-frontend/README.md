@@ -1,4 +1,4 @@
-# frontend
+# bookloan-frontend
 
 ## Project setup
 ```
